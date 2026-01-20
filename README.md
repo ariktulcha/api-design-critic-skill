@@ -70,7 +70,7 @@ API Design Critic is a Claude Skill that analyzes your API designs with the rigo
 
 ### Option 1: Skill File (Recommended)
 
-1. Download [`api-design-critic.skill`](../../releases/latest) from Releases
+1. Download [`api-design-critic.skill`](https://github.com/ariktulcha/api-design-critic-skill/releases/latest) from Releases
 2. Open [claude.ai](https://claude.ai) → Settings → Skills
 3. Click "Add Skill" and upload the file
 
@@ -78,7 +78,7 @@ API Design Critic is a Claude Skill that analyzes your API designs with the rigo
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/api-design-critic-skill.git
+   git clone https://github.com/ariktulcha/api-design-critic-skill.git
    ```
 2. Copy contents to your Claude skills directory
 3. The skill will auto-activate on API-related prompts

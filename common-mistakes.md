@@ -376,7 +376,7 @@ Response:
   name: "John Doe"
 Headers:
   Deprecation: true
-  Sunset: Sat, 01 Jul 2025 00:00:00 GMT
+  Sunset: Sat, 01 Jul 2027 00:00:00 GMT
   Link: </v2/users/{id}>; rel="successor-version"
 
 # V2 (new version)
@@ -450,7 +450,7 @@ Content-Type: application/json
 | PUT | Yes (same result every time) |
 | DELETE | Yes (delete once or many times = deleted) |
 | POST | No, but use Idempotency-Key for critical ops |
-| PATCH | No, but should be when possible |
+| PATCH | No* | *Can be idempotent with JSON Merge Patch |
 
 ---
 

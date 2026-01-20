@@ -183,7 +183,7 @@ Any endpoint returning collections MUST support pagination:
 **Deprecation Requirements:**
 ```http
 Deprecation: true
-Sunset: Sat, 01 Jul 2025 00:00:00 GMT
+Sunset: Sat, 01 Jul 2027 00:00:00 GMT
 Link: </v2/users>; rel="successor-version"
 ```
 

@@ -393,13 +393,15 @@ When deprecating a version, include:
 ```http
 HTTP/1.1 200 OK
 Deprecation: true
-Sunset: Sat, 01 Jul 2025 00:00:00 GMT
+Sunset: Sat, 01 Jul 2027 00:00:00 GMT
 Link: </v2/users>; rel="successor-version"
 ```
 
 ---
 
 ## Query Parameter Conventions
+
+> **Note:** Query parameters use `snake_case` (e.g., `created_after`, `price_min`) while URL paths use `kebab-case` (e.g., `/user-profiles`). This is intentional: query parameters are key-value pairs that often map directly to code variables, where snake_case is common, while URL paths represent resources and benefit from kebab-case readability.
 
 ### Filtering
 
@@ -526,7 +528,7 @@ GET /orders?include=customer(name,email)
 | `X-RateLimit-Reset` | Reset timestamp (Unix) | `1705320000` |
 | `Retry-After` | Wait time (429/503) | `3600` or datetime |
 | `Deprecation` | Version deprecated | `true` |
-| `Sunset` | End-of-life date | `Sat, 01 Jul 2025 00:00:00 GMT` |
+| `Sunset` | End-of-life date | `Sat, 01 Jul 2027 00:00:00 GMT` |
 | `Link` | Related resources | `</v2/users>; rel="successor-version"` |
 
 ### Security Headers
@@ -665,7 +667,7 @@ Document required scopes per endpoint:
 | DELETE | Yes | Deleting twice = still deleted |
 | OPTIONS | Yes | No side effects |
 | POST | No | Use Idempotency-Key for critical ops |
-| PATCH | No | Can be designed to be idempotent |
+| PATCH | No* | *Can be idempotent with JSON Merge Patch |
 
 ### Idempotency-Key Header
 
